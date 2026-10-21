@@ -397,7 +397,13 @@
       "sending": "Sending…",
       "success": "Thank you. We received your message and will reply within two working days.",
       "successMailto": "Your email app should open with the message ready to send.",
-      "error": "Sorry, the message could not be sent. Please try again or email us directly."
+      "errorValidation": "Please check the highlighted fields and try again.",
+      "errorFieldFallback": "Please check this field.",
+      "errorRateLimit": "Too many messages in a short time. Please wait a minute and try again.",
+      "errorServer": "Sorry, something went wrong on our side. Please try again later or email us directly.",
+      "errorNetwork": "We could not reach the server. Check your connection and try again.",
+      "errorTimeout": "The server took too long to answer. Please try again or email us directly.",
+      "privacy": "We use these details only to answer your message."
     },
     "info": {
       "title": "Our offices",

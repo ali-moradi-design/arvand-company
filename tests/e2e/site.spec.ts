@@ -208,3 +208,31 @@ test.describe("SEO", () => {
     expect(await robots.text()).toContain("Sitemap:");
   });
 });
+
+test.describe("keyboard", () => {
+  test("the skip link is the first tab stop and jumps to the content", async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(isMobile, "keyboard only");
+    await page.goto("/en/");
+    await page.keyboard.press("Tab");
+    const skip = page.getByRole("link", { name: "Skip to content" });
+    await expect(skip).toBeFocused();
+    await expect(skip).toBeVisible();
+    await page.keyboard.press("Enter");
+    await expect(page).toHaveURL(/#main$/);
+  });
+
+  test("a focused project card shows a visible outline", async ({ page, isMobile }) => {
+    test.skip(isMobile, "keyboard only");
+    await page.goto("/en/projects/");
+    await page.keyboard.press("Tab");
+    const link = page.getByRole("link", { name: "Marmara Logistics Hub" });
+    await link.focus();
+    const outline = await page
+      .locator("article", { has: link })
+      .evaluate((el) => getComputedStyle(el).outlineWidth);
+    expect(parseFloat(outline)).toBeGreaterThan(0);
+  });
+});

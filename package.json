@@ -15,7 +15,10 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "preview": "serve out -l 3100",
-    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm steiger"
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm steiger",
+    "build:form-fixture": "node scripts/build-form-fixture.mjs",
+    "build:e2e": "pnpm build:form-fixture && pnpm build",
+    "preview:form": "serve out-form -l 3101"
   },
   "engines": {
     "node": ">=22"

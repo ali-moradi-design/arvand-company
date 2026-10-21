@@ -140,3 +140,52 @@ ported. What came from Nova: the project skeleton and configuration ideas
   on the sand background (teal darkened) and a logo link whose accessible name
   was "ArvandPartners" (missing space) / mismatched its `aria-label`.
 - CI now also runs Steiger, unit tests, the build and the Playwright suite.
+
+## 2026-10-21 — PR 3: polish
+
+- Photos: no repeated image on the same page any more (home showed the
+  container photo twice and the hero photo as a project). New photos for
+  project management, engineering and the City Centre Tower; project order
+  changed so the home preview shows three different images; removed two unused
+  image files; `CREDITS.md` table regenerated.
+- Keyboard: cards with a stretched link now draw a focus outline on the whole
+  card (`:has(a:focus-visible)`); before, the link outline was removed and
+  nothing was visible. Two Playwright tests added (skip link, card focus).
+- Footer is a slightly darker navy than the call-to-action band, so the two no
+  longer merge into one block (also in dark theme).
+- `scroll-padding-top` so anchors do not hide under the sticky header;
+  `theme-color` per colour scheme; a short fade-in on the hero (disabled by the
+  reduced-motion rule); `dir="auto"` on free-text form fields so mixed
+  Persian / English input aligns correctly.
+- Checked: `pnpm check`, 16 unit tests, 95 Playwright tests, screenshots in
+  both languages and both themes.
+
+Known limits: the 404 page for unknown URLs under a locale is the English
+`404.html` (static hosting cannot know the language); Nginx should serve it with
+`error_page 404 /404.html`.
+
+## 2026-10-21 — Contact form ready for form-builder
+
+`form-builder` is not built or published yet, so the site does not use its npm
+package. The form only needs an HTTPS endpoint that follows the contract in
+`docs/form-endpoint.md`; connecting it later means setting one repository
+variable (`FORM_ENDPOINT`) and rebuilding.
+
+- `submitContact` (`features/contact-form/lib/submit.ts`): JSON POST with the
+  locale, 10 s timeout (`AbortController`), result types for success, field
+  errors (400/422, two body shapes), rate limit, server error, network error and
+  timeout.
+- The form shows per-field errors (`aria-invalid`, `aria-describedby`), focuses
+  the first invalid field, keeps the input after a failure, blocks double
+  submits (ref guard plus disabled button), and has a short privacy line.
+  Messages in both languages.
+- Tests: 10 new unit tests; 10 new Playwright tests with the endpoint mocked via
+  `page.route`, run on a second build (`out-form/`, `pnpm build:e2e`) because the
+  endpoint is inlined at build time.
+- New workflow `Build site`: builds on every push to `main` with
+  `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_FORM_ENDPOINT` from repository
+  variables and uploads `out/` as the `site` artifact for the later deploy.
+
+Still open for the real connection (depends on `form-builder`): its API URL and
+field keys, CORS for the site origin, its rate limit, and the repository
+variable `FORM_ENDPOINT`.

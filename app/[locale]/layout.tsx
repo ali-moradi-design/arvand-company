@@ -1,3 +1,4 @@
+import type { Viewport } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -7,6 +8,13 @@ import { Footer } from "@/widgets/footer";
 import { Header } from "@/widgets/header";
 import { getDirection, routing } from "@/shared/i18n";
 import { organizationJsonLd } from "@/shared/seo";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1117" },
+  ],
+};
 
 type LocaleParams = { params: Promise<{ locale: string }> };
 
