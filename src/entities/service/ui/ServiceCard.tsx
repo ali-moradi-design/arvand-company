@@ -8,7 +8,7 @@ export function ServiceCard({ service }: { service: Service }) {
   const common = useTranslations("common");
 
   return (
-    <article className="group bg-surface relative flex flex-col overflow-hidden rounded-lg border">
+    <article className="group bg-surface has-[a:focus-visible]:outline-ring relative flex flex-col overflow-hidden rounded-lg border has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-2">
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={service.image}
@@ -25,7 +25,7 @@ export function ServiceCard({ service }: { service: Service }) {
         </p>
         <Link
           href={`/services/${service.slug}/`}
-          className="text-teal mt-4 inline-flex items-center gap-1 text-sm font-semibold after:absolute after:inset-0"
+          className="text-teal mt-4 inline-flex items-center gap-1 text-sm font-semibold after:absolute after:inset-0 focus-visible:outline-none"
         >
           {common("learnMore")}
           <span aria-hidden="true" className="rtl:rotate-180">

@@ -19,7 +19,7 @@ export function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-r from-[hsl(212_64%_12%)] via-[hsl(212_64%_12%/0.85)] to-transparent rtl:bg-gradient-to-l"
       />
-      <Container className="py-24 sm:py-32 lg:py-40">
+      <Container className="animate-in fade-in slide-in-from-bottom-3 py-24 duration-700 sm:py-32 lg:py-40">
         <p className="text-sm font-semibold tracking-wide text-[hsl(40_41%_85%)] uppercase">
           {t("eyebrow")}
         </p>

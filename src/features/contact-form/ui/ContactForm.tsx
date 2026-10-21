@@ -57,7 +57,13 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">
           {t("name")}
-          <input name="name" required autoComplete="name" className={fieldClass} />
+          <input
+            name="name"
+            required
+            autoComplete="name"
+            dir="auto"
+            className={fieldClass}
+          />
         </label>
         <label className="block text-sm font-medium">
           {t("email")}
@@ -74,7 +80,12 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium">
           {t("company")}
-          <input name="company" autoComplete="organization" className={fieldClass} />
+          <input
+            name="company"
+            autoComplete="organization"
+            dir="auto"
+            className={fieldClass}
+          />
         </label>
         <label className="block text-sm font-medium">
           {t("topic")}
@@ -92,7 +103,7 @@ export function ContactForm() {
       </div>
       <label className="block text-sm font-medium">
         {t("message")}
-        <textarea name="message" required rows={6} className={fieldClass} />
+        <textarea name="message" required rows={6} dir="auto" className={fieldClass} />
       </label>
       <div className="hidden" aria-hidden="true">
         <label>

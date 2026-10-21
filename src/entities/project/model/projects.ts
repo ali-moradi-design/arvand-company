@@ -20,16 +20,16 @@ export const PROJECTS = [
     year: 2024,
   },
   {
-    slug: "harbor-terminal-expansion",
-    image: "/images/projects/harbor-terminal-expansion.webp",
-    sector: "infrastructure",
-    year: 2024,
-  },
-  {
     slug: "city-centre-tower",
     image: "/images/projects/city-centre-tower.webp",
     sector: "real-estate",
     year: 2023,
+  },
+  {
+    slug: "harbor-terminal-expansion",
+    image: "/images/projects/harbor-terminal-expansion.webp",
+    sector: "infrastructure",
+    year: 2024,
   },
   {
     slug: "riverside-residences",

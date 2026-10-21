@@ -11,7 +11,7 @@ type PostCardProps = {
 
 export function PostCard({ entry, meta, locale, readLabel }: PostCardProps) {
   return (
-    <article className="group bg-surface relative flex flex-col overflow-hidden rounded-lg border">
+    <article className="group bg-surface has-[a:focus-visible]:outline-ring relative flex flex-col overflow-hidden rounded-lg border has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-2">
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={entry.image}
