@@ -30,7 +30,7 @@ Copied from `roadmap-portfolio@main:notes/company-site-brief.md` to
 Cloned to a scratch folder outside this repo. Only change: removed the Yarn
 `packageManager` field and `yarn.lock` / `.yarnrc.yml` so `pnpm install` works.
 `pnpm build` and `pnpm start` succeed; `/en` and `/ar` return 200.
-Screenshots: `docs/screenshots/nova-{en,ar}-{desktop,mobile}.jpg`.
+Screenshots: `docs/screenshots/nova-{en,ar}-{desktop,mobile}.jpg`. Final site: `docs/screenshots/arvand-*.jpg` (desktop, tablet and mobile side by side).
 
 ### Findings that differ from the brief
 
