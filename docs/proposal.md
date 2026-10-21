@@ -6,6 +6,7 @@ All names are invented; run no trademark search, but do not use them outside
 this demo. Target clients: Türkiye and the Middle East. Bilingual EN / FA.
 
 ### A. Arvand Partners — engineering and project consulting
+
 - Idea: "Arvand" is a river name in Persian; a firm that guides large projects.
 - Colors: deep navy `#0F2A47`, river teal `#1F8A8C`, warm sand `#E9DFCB`,
   ink `#101820`, accent copper `#C8743A`.
@@ -13,6 +14,7 @@ this demo. Target clients: Türkiye and the Middle East. Bilingual EN / FA.
   (a river forking), copper dot as the source.
 
 ### B. Bosphor Freight — logistics and customs brokerage
+
 - Idea: Istanbul gateway between Europe and the Middle East.
 - Colors: marine blue `#0B3C5D`, signal orange `#F28C28`, cool gray `#E8EDF2`,
   white, graphite `#1B1F24`.
@@ -20,6 +22,7 @@ this demo. Target clients: Türkiye and the Middle East. Bilingual EN / FA.
   "B"; orange accent on one panel.
 
 ### C. Sahand Atelier — architecture and interior studio
+
 - Idea: Sahand is a mountain in the region; calm, mineral, premium.
 - Colors: stone `#EFEBE4`, charcoal `#22252A`, olive `#6B7A4B`,
   terracotta `#B5563A`, off-white `#FBFAF7`.
@@ -32,20 +35,20 @@ in light and dark, and it keeps real contrast for Persian text.
 
 ## 2. Page list (static export, `/en/...` and `/fa/...`)
 
-| Route | Content |
-| --- | --- |
-| `/` | Redirect to `/en` (static page, no middleware) |
-| `/{locale}` | Home: hero, key numbers, services preview, case studies preview, testimonials, blog preview, CTA |
-| `/{locale}/services` | Services list |
-| `/{locale}/services/[slug]` | Service detail (3 to 4 services) |
-| `/{locale}/projects` | Case studies list with filter |
-| `/{locale}/projects/[slug]` | Case study detail (4 to 6 projects) |
-| `/{locale}/about` | Story, values, timeline |
-| `/{locale}/team` | Team grid (fictional people, generated avatars) |
-| `/{locale}/blog` | Post list |
-| `/{locale}/blog/[slug]` | MDX post (3 posts per language) |
-| `/{locale}/contact` | Form to `form-builder` (mailto fallback), map-free address block |
-| `404` | Localized not-found |
+| Route                       | Content                                                                                          |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| `/`                         | Redirect to `/en` (static page, no middleware)                                                   |
+| `/{locale}`                 | Home: hero, key numbers, services preview, case studies preview, testimonials, blog preview, CTA |
+| `/{locale}/services`        | Services list                                                                                    |
+| `/{locale}/services/[slug]` | Service detail (3 to 4 services)                                                                 |
+| `/{locale}/projects`        | Case studies list with filter                                                                    |
+| `/{locale}/projects/[slug]` | Case study detail (4 to 6 projects)                                                              |
+| `/{locale}/about`           | Story, values, timeline                                                                          |
+| `/{locale}/team`            | Team grid (fictional people, generated avatars)                                                  |
+| `/{locale}/blog`            | Post list                                                                                        |
+| `/{locale}/blog/[slug]`     | MDX post (3 posts per language)                                                                  |
+| `/{locale}/contact`         | Form to `form-builder` (mailto fallback), map-free address block                                 |
+| `404`                       | Localized not-found                                                                              |
 
 Also: `sitemap.xml`, `robots.txt`, `hreflang`, Organization JSON-LD, OG images.
 Nova sections not kept: pricing, integrations, FAQ (maybe one FAQ on contact).
