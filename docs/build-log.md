@@ -163,3 +163,29 @@ ported. What came from Nova: the project skeleton and configuration ideas
 Known limits: the 404 page for unknown URLs under a locale is the English
 `404.html` (static hosting cannot know the language); Nginx should serve it with
 `error_page 404 /404.html`.
+
+## 2026-10-21 — Contact form ready for form-builder
+
+`form-builder` is not built or published yet, so the site does not use its npm
+package. The form only needs an HTTPS endpoint that follows the contract in
+`docs/form-endpoint.md`; connecting it later means setting one repository
+variable (`FORM_ENDPOINT`) and rebuilding.
+
+- `submitContact` (`features/contact-form/lib/submit.ts`): JSON POST with the
+  locale, 10 s timeout (`AbortController`), result types for success, field
+  errors (400/422, two body shapes), rate limit, server error, network error and
+  timeout.
+- The form shows per-field errors (`aria-invalid`, `aria-describedby`), focuses
+  the first invalid field, keeps the input after a failure, blocks double
+  submits (ref guard plus disabled button), and has a short privacy line.
+  Messages in both languages.
+- Tests: 10 new unit tests; 10 new Playwright tests with the endpoint mocked via
+  `page.route`, run on a second build (`out-form/`, `pnpm build:e2e`) because the
+  endpoint is inlined at build time.
+- New workflow `Build site`: builds on every push to `main` with
+  `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_FORM_ENDPOINT` from repository
+  variables and uploads `out/` as the `site` artifact for the later deploy.
+
+Still open for the real connection (depends on `form-builder`): its API URL and
+field keys, CORS for the site origin, its rate limit, and the repository
+variable `FORM_ENDPOINT`.

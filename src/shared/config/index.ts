@@ -1,1 +1,1 @@
-export { SITE_URL, FORM_ENDPOINT, CONTACT } from "./site";
+export { SITE_URL, FORM_ENDPOINT, FORM_TIMEOUT_MS, CONTACT } from "./site";

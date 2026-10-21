@@ -6,7 +6,11 @@ export const SITE_URL = (
 ).replace(/\/+$/, "");
 
 // Where the contact form posts. Empty means the form falls back to `mailto:`.
+// The request and response format is described in docs/form-endpoint.md.
 export const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "";
+
+// How long the form waits for the endpoint before it reports a timeout.
+export const FORM_TIMEOUT_MS = Number(process.env.NEXT_PUBLIC_FORM_TIMEOUT_MS) || 10_000;
 
 export const CONTACT = {
   email: "hello@arvand-partners.example",

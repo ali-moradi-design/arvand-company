@@ -1,0 +1,31 @@
+name: Build site
+
+# Builds the static site with the production settings and keeps `out/` as an
+# artifact. The deploy workflow (roadmap phase 7) will download this and rsync it
+# to the server. NEXT_PUBLIC_* values are inlined into the files, so they are set
+# here, not on the server. They are public: use repository variables, not secrets.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://company-site.ali-moradi-develop.com' }}
+      NEXT_PUBLIC_FORM_ENDPOINT: ${{ vars.FORM_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out/
+          retention-days: 14

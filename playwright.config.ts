@@ -13,13 +13,39 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["github"], ["list"]] : "list",
   use: { baseURL: "http://localhost:3100", trace: "retain-on-failure" },
-  webServer: {
-    command: "pnpm preview",
-    url: "http://localhost:3100/en/",
-    reuseExistingServer: !process.env.CI,
-  },
+  // `out/` is the normal build; `out-form/` is built with a form endpoint
+  // (`pnpm build:e2e` makes both) and is only used by tests/e2e/form.spec.ts.
+  webServer: [
+    {
+      command: "pnpm preview",
+      url: "http://localhost:3100/en/",
+      reuseExistingServer: !process.env.CI,
+    },
+    {
+      command: "pnpm preview:form",
+      url: "http://localhost:3101/en/",
+      reuseExistingServer: !process.env.CI,
+    },
+  ],
   projects: [
-    { name: "desktop", use: { ...devices["Desktop Chrome"], launchOptions } },
-    { name: "mobile", use: { ...devices["Pixel 7"], launchOptions } },
+    {
+      name: "desktop",
+      testIgnore: /form\.spec/,
+      use: { ...devices["Desktop Chrome"], launchOptions },
+    },
+    {
+      name: "mobile",
+      testIgnore: /form\.spec/,
+      use: { ...devices["Pixel 7"], launchOptions },
+    },
+    {
+      name: "form",
+      testMatch: /form\.spec/,
+      use: {
+        ...devices["Desktop Chrome"],
+        launchOptions,
+        baseURL: "http://localhost:3101",
+      },
+    },
   ],
 });

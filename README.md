@@ -14,7 +14,8 @@ pnpm install
 pnpm dev            # http://localhost:3030
 pnpm check          # lint + format check + typecheck + Steiger (FSD)
 pnpm test           # Vitest unit tests
-pnpm test:e2e       # Playwright + axe against out/ (run pnpm build first)
+pnpm build:e2e      # builds out/ and out-form/ (form endpoint fixture) for the e2e suite
+pnpm test:e2e       # Playwright + axe against out/ and out-form/
 pnpm build          # static site in out/
 pnpm preview        # serve out/ on http://localhost:3100
 ```
@@ -33,10 +34,11 @@ Content: UI text in `messages/{en,fa}.json`, blog posts in
 
 ## Configuration
 
-| Variable                    | Purpose                                                             |
-| --------------------------- | ------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`      | Public URL, used for canonical links, sitemap and Open Graph        |
-| `NEXT_PUBLIC_FORM_ENDPOINT` | Where the contact form POSTs JSON. Empty means a `mailto:` fallback |
+| Variable                      | Purpose                                                                                                |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `NEXT_PUBLIC_SITE_URL`        | Public URL, used for canonical links, sitemap and Open Graph                                           |
+| `NEXT_PUBLIC_FORM_ENDPOINT`   | Where the contact form POSTs JSON. Empty means a `mailto:` fallback. Contract: `docs/form-endpoint.md` |
+| `NEXT_PUBLIC_FORM_TIMEOUT_MS` | Wait before the form reports a timeout (default 10000)                                                 |
 
 ## Third-party
 
