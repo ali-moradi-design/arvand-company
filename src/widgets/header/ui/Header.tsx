@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="bg-background/95 sticky top-0 z-40 border-b backdrop-blur-sm">
       <Container className="relative flex h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label={t("brand.name")} className="rounded-md">
+        <Link href="/" className="rounded-md">
           <Logo name={t("brand.name")} />
         </Link>
         <NavLinks />

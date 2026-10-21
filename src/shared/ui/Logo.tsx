@@ -32,9 +32,9 @@ export function Logo({ name, className }: { name: string; className?: string }) 
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <LogoMark className="text-primary" />
       <span className="text-lg leading-none font-bold tracking-tight">
-        {first}
+        {first}{" "}
         {rest.length ? (
-          <span className="text-muted-foreground ms-1 font-medium">{rest.join(" ")}</span>
+          <span className="text-muted-foreground font-medium">{rest.join(" ")}</span>
         ) : null}
       </span>
     </span>

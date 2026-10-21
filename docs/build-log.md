@@ -132,4 +132,11 @@ ported. What came from Nova: the project skeleton and configuration ideas
   3 widths) with no console errors and no horizontal overflow; theme toggle,
   mobile menu and the project filter tried by hand in a browser.
 
-Still to do: Vitest and Playwright + axe tests, CI test job, final polish.
+### Tests (same PR)
+
+- Vitest: 16 tests (formatting, `mailto:`, direction, metadata, message parity).
+- Playwright: 93 passing tests on desktop and mobile viewports; axe found two
+  real problems on the first run, both fixed: contrast of the teal eyebrow text
+  on the sand background (teal darkened) and a logo link whose accessible name
+  was "ArvandPartners" (missing space) / mismatched its `aria-label`.
+- CI now also runs Steiger, unit tests, the build and the Playwright suite.

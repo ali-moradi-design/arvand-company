@@ -13,6 +13,8 @@ proposal), `docs/build-log.md` (what was done, in order).
 pnpm install
 pnpm dev            # http://localhost:3030
 pnpm check          # lint + format check + typecheck + Steiger (FSD)
+pnpm test           # Vitest unit tests
+pnpm test:e2e       # Playwright + axe against out/ (run pnpm build first)
 pnpm build          # static site in out/
 pnpm preview        # serve out/ on http://localhost:3100
 ```
@@ -40,3 +42,14 @@ Content: UI text in `messages/{en,fa}.json`, blog posts in
 
 Based on the MIT-licensed Nova template: `LICENSE-THIRD-PARTY.md`. Photos,
 fonts and icons: `CREDITS.md`.
+
+## Tests
+
+- `tests/unit`: Vitest for helpers (number and date formatting, `mailto:` builder,
+  metadata, text direction) and for the message files (same keys in both
+  languages, Persian digits only).
+- `tests/e2e`: Playwright on desktop and a Pixel 7 viewport. Covers both
+  languages, RTL layout, navigation, the project filter, the contact form, the
+  theme toggle, SEO tags and an axe (WCAG 2.1 AA) scan of every route in both
+  languages plus the dark theme.
+- To use an already installed Chromium: `PW_CHROMIUM_PATH=/path/to/chrome pnpm test:e2e`.
