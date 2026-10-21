@@ -1,367 +1,434 @@
 {
-  "brand": { "name": "Nova" },
+  "brand": { "name": "Arvand Partners" },
   "metadata": {
-    "title": "{brand} - Elevate Your Digital Experience",
-    "description": "Transform how you work with our AI-powered platform. Automate workflows, gain insights, and boost productivity.",
-    "imageAlt": "{brand} - AI-powered platform"
+    "title": "{brand}: engineering and project consulting",
+    "description": "Arvand Partners guides complex construction, industrial and logistics projects across Türkiye and the Middle East, from feasibility to handover."
   },
-  "localeSwitcher": {
-    "switchTo": "Switch language to {language}",
-    "names": { "en": "English", "ar": "العربية" }
+  "nav": {
+    "primary": "Main navigation",
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "team": "Team",
+    "blog": "Insights",
+    "contact": "Contact"
   },
-  "header": {
-    "products": {
-      "label": "Products",
-      "items": {
-        "analytics": "Analytics",
-        "automation": "Automation",
-        "collaboration": "Collaboration",
-        "security": "Security"
-      }
-    },
-    "solutions": {
-      "label": "Solutions",
-      "items": {
-        "startups": "For Startups",
-        "enterprise": "For Enterprise",
-        "teams": "For Teams",
-        "developers": "For Developers"
-      }
-    },
-    "links": { "pricing": "Pricing", "testimonials": "Testimonials" },
-    "login": "Log in",
-    "getStarted": "Get Started",
+  "common": {
+    "skipToContent": "Skip to content",
+    "getInTouch": "Get in touch",
+    "learnMore": "Learn more",
+    "allServices": "All services",
+    "allProjects": "All projects",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "mobileNavigation": "Mobile navigation",
+    "themeDark": "Switch to dark theme",
+    "themeLight": "Switch to light theme",
+    "switchLanguage": "Switch language to {language}"
   },
   "footer": {
-    "description": "Empowering businesses with AI-powered solutions that drive growth and efficiency.",
-    "copyright": "© {year} {brand}. All rights reserved.",
-    "social": {
-      "twitter": "Twitter",
-      "facebook": "Facebook",
-      "instagram": "Instagram",
-      "linkedin": "LinkedIn",
-      "github": "GitHub"
-    },
-    "groups": {
-      "product": {
-        "title": "Product",
-        "links": {
-          "features": "Features",
-          "pricing": "Pricing",
-          "integrations": "Integrations",
-          "roadmap": "Roadmap",
-          "changelog": "Changelog"
-        }
-      },
-      "company": {
-        "title": "Company",
-        "links": {
-          "about": "About",
-          "blog": "Blog",
-          "careers": "Careers",
-          "customers": "Customers",
-          "contact": "Contact"
-        }
-      },
-      "resources": {
-        "title": "Resources",
-        "links": {
-          "documentation": "Documentation",
-          "helpCenter": "Help Center",
-          "apiReference": "API Reference",
-          "community": "Community",
-          "status": "Status"
-        }
-      }
-    },
-    "legal": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service",
-      "cookies": "Cookie Policy"
-    }
+    "description": "Independent engineering and project consulting for clients building in Türkiye and the Middle East.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "offices": "Istanbul · Dubai",
+    "fictional": "Arvand Partners is a fictional company created for a portfolio demonstration. All names, projects and quotes are invented.",
+    "rights": "© 2026 {brand}. Demo website."
   },
-  "hero": {
-    "badge": "Introducing {brand} AI Assistant",
-    "title": { "line1": "Elevate Your", "line2": "Digital Experience" },
-    "description": "Transform how you work with our AI-powered platform. Automate workflows, gain insights, and boost productivity.",
-    "primaryCta": "Start Free Trial",
-    "secondaryCta": "Watch Demo",
-    "trustedBy": "Trusted by <strong>{count}</strong> companies",
-    "imageAlt": "Dashboard Preview",
-    "status": { "online": "System Online", "processing": "Processing data..." }
-  },
-  "socialProof": {
-    "eyebrow": "Trusted by industry leaders",
-    "title": "Join thousands of satisfied customers",
-    "logosLabel": "Companies using our platform",
-    "logoAlt": "{name} logo",
-    "statsLabel": "Key platform statistics",
+  "home": {
+    "hero": {
+      "eyebrow": "Engineering and project consulting",
+      "title": "We guide complex projects from the first study to the last handover.",
+      "description": "Arvand Partners works with owners, developers and operators across Türkiye and the Middle East to keep large construction, industrial and logistics projects on time and on budget.",
+      "primaryCta": "Talk to our team",
+      "secondaryCta": "See our projects",
+      "imageAlt": "Glass office towers seen from below"
+    },
     "stats": {
-      "activeUsers": "Active Users",
-      "enterpriseClients": "Enterprise Clients",
-      "uptime": "Uptime SLA",
-      "support": "Dedicated Support"
+      "label": "Arvand Partners in numbers",
+      "projects": "Projects delivered",
+      "countries": "Countries",
+      "years": "Years of experience",
+      "specialists": "Specialists"
+    },
+    "services": {
+      "eyebrow": "What we do",
+      "title": "Four disciplines, one accountable team",
+      "description": "From the investment case to the logistics that feed the site, we cover the decisions that decide whether a project succeeds."
+    },
+    "approach": {
+      "eyebrow": "How we work",
+      "title": "A clear method on every engagement",
+      "description": "The same three steps apply whether we advise on a single decision or run a programme for years.",
+      "steps": [
+        {
+          "title": "Understand",
+          "text": "We start with your objectives, constraints and risks, and agree what success looks like in numbers."
+        },
+        {
+          "title": "Plan",
+          "text": "We turn objectives into a schedule, a budget and a responsibility map that every party can read."
+        },
+        {
+          "title": "Deliver",
+          "text": "We stay on site and in the data, reporting early on variances so decisions are made while they are cheap."
+        }
+      ]
+    },
+    "projects": {
+      "eyebrow": "Selected work",
+      "title": "Projects we are proud of",
+      "description": "A sample of recent engagements in logistics, real estate, industry and infrastructure.",
+      "viewAll": "View all projects"
+    },
+    "testimonials": {
+      "eyebrow": "Clients",
+      "title": "What clients say",
+      "description": "Quotes are fictional and written for this demonstration."
+    },
+    "cta": {
+      "title": "Planning a project in the region?",
+      "description": "Tell us what you are building. We reply within two working days.",
+      "button": "Start a conversation"
     }
   },
-  "howItWorks": {
-    "title": "How It Works",
-    "subtitle": "Simple four-step process",
-    "goToStep": "Go to step {number}",
-    "steps": {
-      "signUp": {
-        "title": "Sign Up",
-        "description": "Create your account in seconds. No credit card required for the free trial."
+  "services": {
+    "eyebrow": "Services",
+    "metaTitle": "Services",
+    "metaDescription": "Project management, engineering review, feasibility advisory and logistics planning from Arvand Partners.",
+    "title": "Services",
+    "description": "Four connected disciplines that cover a project from the investment decision to the last delivery.",
+    "deliverables": "What you receive",
+    "outcome": "The outcome",
+    "process": {
+      "title": "How an engagement runs",
+      "description": "Every service follows the same simple rhythm.",
+      "steps": [
+        {
+          "title": "Scope",
+          "text": "A short paid study to define the question, the data we need and the decision you must make."
+        },
+        {
+          "title": "Work",
+          "text": "A named lead and a small team work inside your process, with a weekly written update."
+        },
+        {
+          "title": "Hand over",
+          "text": "You keep the models, templates and training, so the result does not depend on us."
+        }
+      ]
+    },
+    "items": {
+      "project-management": {
+        "title": "Project management and controls",
+        "summary": "Owner-side management, scheduling and cost control for large programmes.",
+        "intro": "We act as your representative on large projects: setting up the schedule and budget baseline, coordinating contractors and reporting honestly on progress and risk.",
+        "deliverables": [
+          "Integrated schedule and cost baseline",
+          "Weekly progress and variance reports",
+          "Contractor coordination and claims review",
+          "Risk register with owners and mitigation dates",
+          "Handover and close-out documentation"
+        ],
+        "outcome": "Fewer surprises. Typical clients see delays flagged six to eight weeks earlier than before."
       },
-      "integrate": {
-        "title": "Integrate",
-        "description": "Connect your existing tools and services with our one-click integrations."
+      "engineering-review": {
+        "title": "Engineering design review",
+        "summary": "Independent review of designs, specifications and constructability.",
+        "intro": "A second pair of experienced eyes before you commit to construction. We review drawings, specifications and bills of quantities for errors, omissions and avoidable cost.",
+        "deliverables": [
+          "Design review report with ranked findings",
+          "Constructability and sequencing workshop",
+          "Value engineering options with cost impact",
+          "Specification and tender document check"
+        ],
+        "outcome": "Problems found on paper, where fixing them costs a fraction of fixing them on site."
       },
-      "customize": {
-        "title": "Customize",
-        "description": "Configure your workspace and workflows to match your unique business needs."
+      "feasibility-advisory": {
+        "title": "Feasibility and investment advisory",
+        "summary": "Market, technical and financial studies that support a clear go or no-go.",
+        "intro": "Before capital is committed we test the idea against demand, site conditions, regulation and returns, and we say plainly when a project should not proceed.",
+        "deliverables": [
+          "Market and demand assessment",
+          "Technical options and site appraisal",
+          "Financial model with sensitivity cases",
+          "Permitting and regulatory roadmap",
+          "Board-ready summary and recommendation"
+        ],
+        "outcome": "A decision you can defend to partners, lenders and your own board."
       },
-      "launch": {
-        "title": "Launch",
-        "description": "Go live with your optimized workflows and start seeing results immediately."
+      "logistics-planning": {
+        "title": "Supply chain and logistics planning",
+        "summary": "Cross-border freight, site logistics and warehouse planning.",
+        "intro": "We design the flows of materials and goods that keep projects and operations moving across borders, ports and customs regimes.",
+        "deliverables": [
+          "Route and mode analysis across Türkiye and the Gulf",
+          "Customs and documentation plan",
+          "Warehouse and laydown area layout",
+          "Supplier lead-time and buffer planning"
+        ],
+        "outcome": "Materials arrive when the site needs them, not a month before or after."
       }
     }
   },
-  "features": {
-    "title": "Powerful Features",
-    "subtitle": "Everything you need to streamline your workflow",
+  "projects": {
+    "eyebrow": "Projects",
+    "metaTitle": "Projects",
+    "metaDescription": "Case studies from Arvand Partners in logistics, real estate, industry and infrastructure.",
+    "title": "Projects",
+    "description": "Case studies from recent engagements. Clients and figures are fictional.",
+    "filterLabel": "Filter by sector",
+    "all": "All",
+    "count": "{count, plural, one {# project shown} other {# projects shown}}",
+    "sectors": {
+      "logistics": "Logistics",
+      "real-estate": "Real estate",
+      "industry": "Industry",
+      "infrastructure": "Infrastructure"
+    },
+    "labels": {
+      "location": "Location",
+      "sector": "Sector",
+      "year": "Year",
+      "scope": "Our scope",
+      "challenge": "The challenge",
+      "approach": "Our approach",
+      "result": "The result"
+    },
     "items": {
-      "analytics": {
-        "title": "Advanced Analytics",
-        "description": "Gain deep insights with our powerful analytics tools. Track performance, identify trends, and make data-driven decisions.",
-        "benefits": [
-          "Real-time data visualization",
-          "Custom reporting dashboards",
-          "Predictive analytics with AI",
-          "Automated insights generation"
-        ]
+      "marmara-logistics-hub": {
+        "title": "Marmara Logistics Hub",
+        "location": "Kocaeli, Türkiye",
+        "summary": "A 120,000 m² distribution centre planned around rail and port access.",
+        "scope": "Project management, logistics planning",
+        "challenge": "The developer had a fixed opening date tied to an anchor tenant, but the site layout and the freight flows had been designed separately.",
+        "approach": "We merged both into one model, resequenced the earthworks and moved the truck marshalling area, which removed a conflict with the rail spur.",
+        "result": "The hub opened on the agreed date. Truck turnaround in the first quarter was 22 percent faster than the tenant's target."
       },
-      "automation": {
-        "title": "Intelligent Automation",
-        "description": "Streamline your workflows with smart automation. Reduce manual tasks and focus on what matters most.",
-        "benefits": [
-          "Workflow automation builder",
-          "Trigger-based actions",
-          "Integration with 100+ tools",
-          "AI-powered suggestions"
-        ]
+      "levant-office-campus": {
+        "title": "Levant Office Campus",
+        "location": "Beirut, Lebanon",
+        "summary": "A five-building office campus delivered in two phases.",
+        "scope": "Engineering design review, project management",
+        "challenge": "Design changes during tendering had pushed the budget 14 percent above the approved figure.",
+        "approach": "A design review and value engineering workshop identified savings in the facade and mechanical systems without reducing floor area.",
+        "result": "Budget returned to within 2 percent of the original figure and phase one finished three weeks early."
       },
-      "collaboration": {
-        "title": "Team Collaboration",
-        "description": "Work seamlessly with your team in real-time. Share, edit, and collaborate on projects from anywhere.",
-        "benefits": [
-          "Real-time document editing",
-          "Project management tools",
-          "Team chat and video calls",
-          "Permission controls"
-        ]
+      "harbor-terminal-expansion": {
+        "title": "Harbor Terminal Expansion",
+        "location": "Mersin, Türkiye",
+        "summary": "Berth and yard expansion while the terminal stayed in operation.",
+        "scope": "Project management, logistics planning",
+        "challenge": "Construction had to happen beside live container operations with no loss of throughput.",
+        "approach": "We built a phased work plan around vessel schedules and a daily coordination meeting between the contractor and the terminal operator.",
+        "result": "Zero lost vessel calls during construction and the new berth entered service on schedule."
       },
-      "security": {
-        "title": "Enterprise Security",
-        "description": "Protect your data with enterprise-grade security. Ensure compliance and maintain privacy.",
-        "benefits": [
-          "End-to-end encryption",
-          "Role-based access control",
-          "Compliance monitoring",
-          "Audit logs and reporting"
-        ]
+      "city-centre-tower": {
+        "title": "City Centre Tower",
+        "location": "Dubai, UAE",
+        "summary": "A 42-storey mixed-use tower with a tight urban site.",
+        "scope": "Feasibility advisory, project management",
+        "challenge": "The investor needed to know whether the mix of offices and serviced apartments would earn the required return.",
+        "approach": "A feasibility study compared four programmes with demand data and a sensitivity model, then we managed the selected scheme.",
+        "result": "The recommended mix raised projected yield by 1.8 points and the tower was topped out in 29 months."
+      },
+      "riverside-residences": {
+        "title": "Riverside Residences",
+        "location": "Izmir, Türkiye",
+        "summary": "A low-rise residential development on a river plot.",
+        "scope": "Engineering design review",
+        "challenge": "Flood risk and soil conditions were not fully reflected in the foundation design.",
+        "approach": "We reviewed the geotechnical report and drainage design and proposed a revised foundation and levels strategy.",
+        "result": "The revised design avoided a planned redesign during construction and saved an estimated four months."
+      },
+      "steelworks-modernization": {
+        "title": "Steelworks Modernization",
+        "location": "Iskenderun, Türkiye",
+        "summary": "Replacement of a rolling line during planned shutdowns.",
+        "scope": "Project management, supply chain planning",
+        "challenge": "Long-lead equipment from three countries had to arrive in a shutdown window of only nine weeks.",
+        "approach": "We mapped lead times, secured transport slots early and rehearsed the installation sequence with the plant team.",
+        "result": "The line restarted within the window and ramped to full output two weeks ahead of plan."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "metaTitle": "About",
+    "metaDescription": "The story, values and history of Arvand Partners, a fictional engineering and project consultancy.",
+    "title": "Independent advice from people who have built things",
+    "description": "Arvand Partners is a consultancy of engineers, planners and logistics specialists.",
+    "story": {
+      "title": "Our story",
+      "imageAlt": "An empty boardroom with a long table and city views",
+      "paragraphs": [
+        "Arvand Partners began in 2008 as a three-person engineering review practice in Istanbul. Clients kept asking us for the next step: not only to find the problem, but to help fix it.",
+        "Today we are a team of specialists in two offices, working with owners, developers and operators across Türkiye and the Middle East. We do not build and we do not sell materials, so our advice stays independent.",
+        "We take the name from the river that links regions: a reminder that projects succeed when the people and flows around them are connected."
+      ]
+    },
+    "values": {
+      "title": "What we stand for",
+      "items": [
+        {
+          "title": "Independence",
+          "text": "We have no stake in the contractor or supplier you choose. We work only for the client."
+        },
+        {
+          "title": "Plain reporting",
+          "text": "Short, honest reports that say what is late, why, and what to decide."
+        },
+        {
+          "title": "Knowledge that stays",
+          "text": "We leave you the models, templates and training, not a dependency."
+        }
+      ]
+    },
+    "timeline": {
+      "title": "Milestones",
+      "items": [
+        {
+          "year": 2008,
+          "text": "Founded in Istanbul as an engineering review practice."
+        },
+        { "year": 2013, "text": "Project management and controls service launched." },
+        { "year": 2017, "text": "Dubai office opened to serve Gulf clients." },
+        { "year": 2021, "text": "Logistics and supply chain planning joined the firm." },
+        { "year": 2025, "text": "Passed 140 delivered projects in nine countries." }
+      ]
+    }
+  },
+  "team": {
+    "eyebrow": "Team",
+    "metaTitle": "Team",
+    "metaDescription": "Meet the partners and specialists of Arvand Partners (fictional people).",
+    "title": "The people behind the work",
+    "description": "Six of our senior team. All people shown are fictional.",
+    "members": {
+      "leyla-karimi": {
+        "name": "Leyla Karimi",
+        "initials": "LK",
+        "role": "Managing Partner",
+        "bio": "Civil engineer with 25 years on large infrastructure programmes. Leads client relationships and quality."
+      },
+      "omar-haddad": {
+        "name": "Omar Haddad",
+        "initials": "OH",
+        "role": "Head of Engineering",
+        "bio": "Structural engineer who leads design reviews and constructability workshops."
+      },
+      "selin-aydin": {
+        "name": "Selin Aydın",
+        "initials": "SA",
+        "role": "Director, Advisory",
+        "bio": "Former investment analyst. Builds the feasibility models and market studies."
+      },
+      "daniel-reza": {
+        "name": "Daniel Reza",
+        "initials": "DR",
+        "role": "Logistics Lead",
+        "bio": "Planned freight corridors between Europe, Anatolia and the Gulf for fifteen years."
+      },
+      "nour-almasri": {
+        "name": "Nour Al-Masri",
+        "initials": "NM",
+        "role": "Senior Project Manager",
+        "bio": "Runs owner-side programmes in Dubai. Specialist in schedule recovery."
+      },
+      "kaveh-rahimi": {
+        "name": "Kaveh Rahimi",
+        "initials": "KR",
+        "role": "Finance and Risk",
+        "bio": "Owns cost control, risk registers and the numbers behind every report."
       }
     }
   },
   "testimonials": {
-    "title": "What Our Customers Say",
-    "subtitle": "Don't just take our word for it - hear from our satisfied customers.",
-    "quoted": "“{quote}”",
-    "rating": "Rated {rating} out of 5 stars",
-    "slide": "slide",
-    "slideLabel": "Testimonial {current} of {total}",
-    "carousel": "testimonial carousel",
-    "region": "Customer testimonials",
-    "navigation": "Testimonial navigation",
-    "previous": "Previous testimonial",
-    "next": "Next testimonial",
-    "goTo": "Go to testimonial {number}",
     "items": {
-      "sarah": {
-        "author": "Sarah Johnson",
-        "role": "Product Manager, TechCorp",
-        "quote": "{brand} has completely transformed how we manage our projects. The AI features are genuinely helpful and the interface is beautiful.",
-        "portraitAlt": "Portrait of {author}"
+      "t1": {
+        "quote": "They told us in week three that our schedule could not work, and showed us a version that could. That honesty saved the opening date.",
+        "name": "Hande Yilmaz",
+        "role": "Operations Director, Kuzey Logistics (fictional)"
       },
-      "michael": {
-        "author": "Michael Chen",
-        "role": "CTO, GrowthStartup",
-        "quote": "We've seen a 40% increase in productivity since implementing {brand}. The automation features alone have saved us countless hours.",
-        "portraitAlt": "Portrait of {author}"
+      "t2": {
+        "quote": "The design review paid for itself many times over. Every finding came with a cost and a fix, not just a comment.",
+        "name": "Rami Nasser",
+        "role": "Development Manager, Cedar Estates (fictional)"
       },
-      "emily": {
-        "author": "Emily Rodriguez",
-        "role": "Operations Director, ScaleUp Inc",
-        "quote": "The customer support is exceptional. Whenever we've had questions, the team has been quick to respond and incredibly helpful.",
-        "portraitAlt": "Portrait of {author}"
+      "t3": {
+        "quote": "Clear weekly reports and no jargon. Our board always knew where we stood.",
+        "name": "Mehmet Aksoy",
+        "role": "Chief Financial Officer, Anadolu Works (fictional)"
       }
-    }
-  },
-  "pricing": {
-    "title": "Simple, Transparent Pricing",
-    "subtitle": "Choose the plan that works best for your business. All plans include our core features.",
-    "trialInfo": "All plans include a 14-day free trial. No credit card required.",
-    "billingFrequency": "Billing Frequency",
-    "annual": "Annual",
-    "monthly": "Monthly",
-    "annualBilling": "Annual billing",
-    "monthlyBilling": "Monthly billing",
-    "save": "Save 20%",
-    "mostPopular": "Most Popular",
-    "year": "year",
-    "month": "month",
-    "per": "/{period}",
-    "price": "${price}",
-    "priceLabel": "{price} dollars per {period}",
-    "plans": {
-      "featuresLabel": "{plan} plan features",
-      "ctaLabel": "{cta} with the {plan} plan",
-      "starter": {
-        "name": "Starter",
-        "description": "Perfect for individuals and small teams",
-        "cta": "Get Started",
-        "features": [
-          "5 Team Members",
-          "10GB Storage",
-          "Basic Analytics",
-          "Email Support",
-          "2 Projects"
-        ]
-      },
-      "professional": {
-        "name": "Professional",
-        "description": "Ideal for growing businesses",
-        "cta": "Get Started",
-        "features": [
-          "15 Team Members",
-          "50GB Storage",
-          "Advanced Analytics",
-          "Priority Support",
-          "API Access",
-          "Custom Integrations",
-          "Unlimited Projects"
-        ]
-      },
-      "enterprise": {
-        "name": "Enterprise",
-        "description": "For large organizations with complex needs",
-        "cta": "Contact Sales",
-        "features": [
-          "Unlimited Team Members",
-          "500GB Storage",
-          "Enterprise Analytics",
-          "24/7 Dedicated Support",
-          "Advanced Security",
-          "Custom Development",
-          "Onboarding Assistance",
-          "SLA Guarantee"
-        ]
-      }
-    }
-  },
-  "integrations": {
-    "title": "Seamless Integrations",
-    "subtitle": "Connect with your favorite tools and services",
-    "ctaText": "Don't see what you need?",
-    "ctaLink": "Request an integration",
-    "ctaAriaLabel": "Request a custom integration",
-    "listLabel": "Available integrations",
-    "categoryLabel": "{category} integration",
-    "categories": {
-      "communication": "Communication",
-      "development": "Development",
-      "productivity": "Productivity",
-      "workspace": "Workspace",
-      "design": "Design",
-      "crm": "CRM",
-      "automation": "Automation",
-      "payments": "Payments",
-      "marketing": "Marketing",
-      "meetings": "Meetings",
-      "projectManagement": "Project Management",
-      "support": "Support"
     }
   },
   "blog": {
-    "title": "Latest Insights",
-    "subtitle": "Expert advice on productivity and technology",
-    "viewAll": "View All Articles",
-    "viewAllLabel": "View all blog articles",
-    "readMore": "Read More",
-    "readMoreLabel": "Read more about {title}",
-    "imageAlt": "Featured image for article: {title}",
-    "categoryLabel": "Category: {category}",
-    "publishedLabel": "Published date: {date}",
-    "readTimeLabel": "Reading time: {readTime}",
-    "readTime": "{minutes} min read",
-    "categories": {
-      "technology": "Technology",
-      "productivity": "Productivity",
-      "strategy": "Strategy"
+    "eyebrow": "Insights",
+    "metaTitle": "Insights",
+    "metaDescription": "Short articles on project delivery, feasibility and logistics from Arvand Partners.",
+    "title": "Insights",
+    "description": "Short notes from our projects on delivery, feasibility and logistics.",
+    "read": "Read article",
+    "back": "All articles",
+    "readingTime": "{minutes} min read"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "metaTitle": "Contact",
+    "metaDescription": "Contact Arvand Partners about your project in Türkiye or the Middle East.",
+    "title": "Tell us about your project",
+    "description": "A short message is enough. We reply within two working days.",
+    "form": {
+      "title": "Send a message",
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company (optional)",
+      "topic": "Topic",
+      "topicPlaceholder": "Choose a topic",
+      "topics": [
+        "Project management",
+        "Engineering review",
+        "Feasibility study",
+        "Logistics planning",
+        "Something else"
+      ],
+      "message": "How can we help?",
+      "send": "Send message",
+      "sending": "Sending…",
+      "success": "Thank you. We received your message and will reply within two working days.",
+      "successMailto": "Your email app should open with the message ready to send.",
+      "error": "Sorry, the message could not be sent. Please try again or email us directly."
     },
-    "articles": {
-      "aiWorkflow": {
-        "title": "10 Ways AI Is Transforming Workflow Automation",
-        "excerpt": "Discover how artificial intelligence is revolutionizing the way businesses handle repetitive tasks and workflows."
-      },
-      "remoteCollaboration": {
-        "title": "The Future of Remote Collaboration Tools",
-        "excerpt": "See how the latest innovations in team collaboration software are making remote work more efficient than ever."
-      },
-      "dataStrategy": {
-        "title": "How to Build an Effective Data Strategy",
-        "excerpt": "Learn the essential steps to creating a data strategy that drives business growth and informed decision making."
-      }
+    "info": {
+      "title": "Our offices",
+      "offices": "Istanbul and Dubai (fictional addresses)",
+      "hours": "Monday to Friday, 09:00 to 18:00."
+    },
+    "faq": {
+      "title": "Common questions",
+      "items": [
+        {
+          "question": "Do you work outside Türkiye and the Gulf?",
+          "answer": "Yes. Most work is in Türkiye and the Middle East, but we take projects in neighbouring regions when we can staff them well."
+        },
+        {
+          "question": "How do engagements start?",
+          "answer": "With a short paid scoping study. It defines the question and the plan, and you can stop there if it is not right."
+        },
+        {
+          "question": "Do you also build or supply materials?",
+          "answer": "No. We stay independent so our advice is never tied to a contractor or supplier."
+        },
+        {
+          "question": "In which languages do you work?",
+          "answer": "English, Persian, Turkish and Arabic."
+        }
+      ]
     }
   },
-  "faq": {
-    "title": "Frequently Asked Questions",
-    "subtitle": "Have questions? We're here to help. If you don't see your question here, feel free to contact us.",
-    "contactText": "Still have questions?",
-    "contactLink": "Contact our support team",
-    "items": {
-      "trial": {
-        "question": "How does the free trial work?",
-        "answer": "Our free trial gives you full access to all features for 14 days with no credit card required. You can upgrade to a paid plan at any time during or after your trial."
-      },
-      "discounts": {
-        "question": "Do you offer discounts for startups or non-profits?",
-        "answer": "Yes, we offer special pricing for startups, non-profit organizations, and educational institutions. Please contact our sales team for more information."
-      },
-      "changePlan": {
-        "question": "Can I change my plan later?",
-        "answer": "Absolutely! You can upgrade, downgrade, or change your plan at any time. Changes to your subscription will be prorated for the remainder of your billing cycle."
-      },
-      "support": {
-        "question": "What kind of support do you offer?",
-        "answer": "We offer email support for all customers, with priority support and dedicated account managers for Enterprise plans. Our support team is available 24/7 to assist with any questions or issues."
-      },
-      "security": {
-        "question": "Is my data secure?",
-        "answer": "Security is our top priority. We use industry-standard encryption, regular security audits, and strict access controls to ensure your data is always protected. All data is stored in SOC 2 compliant data centers."
-      },
-      "export": {
-        "question": "Can I export my data?",
-        "answer": "Yes, you can export your data at any time in various formats including CSV, JSON, and PDF. We believe your data belongs to you and make it easy to take it with you if needed."
-      }
-    }
-  },
-  "cta": {
-    "title": "Ready to Transform Your Workflow?",
-    "description": "Join thousands of satisfied customers who are already using {brand} to streamline their operations and boost productivity.",
-    "primaryCta": "Start Free Trial",
-    "secondaryCta": "Schedule Demo",
-    "note": "No credit card required. 14-day free trial."
+  "notFound": {
+    "title": "This page could not be found",
+    "text": "The link may be old or the address mistyped. Start again from the home page.",
+    "back": "Back to home"
   }
 }
