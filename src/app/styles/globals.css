@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Arvand Partners palette. Light is the default theme. Colours are HSL triples. */
+:root {
+  --background: 40 33% 98%;
+  --foreground: 210 33% 9%;
+  --surface: 0 0% 100%;
+  --surface-foreground: 210 33% 9%;
+  --sand: 40 41% 90%;
+  --muted: 40 25% 94%;
+  --muted-foreground: 212 18% 36%;
+  --primary: 212 64% 17%;
+  --primary-foreground: 40 33% 98%;
+  --teal: 181 70% 28%;
+  --copper: 24 62% 38%;
+  --copper-foreground: 0 0% 100%;
+  --border: 40 18% 82%;
+  --ring: 181 70% 28%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 210 33% 7%;
+  --foreground: 40 33% 96%;
+  --surface: 211 36% 11%;
+  --surface-foreground: 40 33% 96%;
+  --sand: 211 30% 16%;
+  --muted: 211 30% 13%;
+  --muted-foreground: 210 16% 70%;
+  --primary: 181 55% 62%;
+  --primary-foreground: 210 33% 9%;
+  --teal: 181 55% 62%;
+  --copper: 24 70% 62%;
+  --copper-foreground: 210 33% 9%;
+  --border: 211 24% 22%;
+  --ring: 181 55% 62%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-surface: hsl(var(--surface));
+  --color-surface-foreground: hsl(var(--surface-foreground));
+  --color-sand: hsl(var(--sand));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-teal: hsl(var(--teal));
+  --color-copper: hsl(var(--copper));
+  --color-copper-foreground: hsl(var(--copper-foreground));
+  --color-border: hsl(var(--border));
+  --color-ring: hsl(var(--ring));
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --font-sans:
+    var(--font-inter), var(--font-vazirmatn), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Persian puts Vazirmatn first so Latin words inside Persian text stay consistent. */
+:lang(fa) {
+  --font-sans:
+    var(--font-vazirmatn), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    ::after,
+    ::before {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 76rem;
+  @variant sm {
+    padding-inline: 1.5rem;
+  }
+  @variant lg {
+    padding-inline: 2rem;
+  }
+}

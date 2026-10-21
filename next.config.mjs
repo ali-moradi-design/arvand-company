@@ -1,27 +1,20 @@
+import createMDX from "@next/mdx";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+const withNextIntl = createNextIntlPlugin("./src/shared/i18n/request.ts");
+const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-
-  images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    formats: ["image/webp", "image/avif"],
-    minimumCacheTTL: 31536000,
-    dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment",
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.simpleicons.org" },
-      { protocol: "https", hostname: "images.unsplash.com" },
-    ],
-  },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
-  },
+  // Fully static site: `pnpm build` writes the deployable files to `out/`.
+  output: "export",
+  // Each page becomes `<route>/index.html`, which Nginx serves without rewrites.
+  trailingSlash: true,
+  // The image optimizer needs a server. Images are pre-sized in `public/images`
+  // and still go through `next/image` for lazy loading, `sizes` and no layout shift.
+  images: { unoptimized: true },
+  pageExtensions: ["ts", "tsx"],
 };
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(withMDX(nextConfig));

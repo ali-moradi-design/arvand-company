@@ -99,3 +99,37 @@ Known leftovers for later PRs:
 - Dark theme is still the look of the template; light default comes with the
   rebrand.
 - `main` does not exist on the remote (empty repo), so a PR cannot be opened yet.
+
+## 2026-10-21 — PR 2: static export, FSD, Persian, new pages, rebrand
+
+Because Nova is a SaaS landing page, the content was rewritten rather than
+ported. What came from Nova: the project skeleton and configuration ideas
+(App Router + `next-intl`, theme provider, `cva` buttons, CSS variable tokens).
+
+- `output: 'export'` with `trailingSlash` and `images.unoptimized`; middleware
+  removed. `/` is a prerendered redirect to `/en/`. `next/image` is still used
+  everywhere (lazy loading, `sizes`, `priority` for the hero, no layout shift)
+  but images are pre-sized in `public/images` because the optimizer needs a
+  server.
+- Locale `ar` replaced by `fa`: RTL via `dir`, Vazirmatn, Persian digits in
+  Persian text and in formatted numbers (`formatNumber`), Gregorian dates
+  (`fa-IR-u-ca-gregory`), logical CSS (`ps-`, `ms-`, `start-`, `rtl:` only for
+  arrows).
+- FSD: layers in `src/` and routes in root `app/`; empty root `pages/` so Next
+  ignores `src/pages`. Steiger passes (`pnpm steiger`).
+- Pages: home, services (+4 details), projects (+6 details, sector filter),
+  about, team, blog (+3 MDX posts per language), contact (FAQ, form with
+  endpoint or `mailto:` fallback), localized and global 404.
+- SEO: metadata per page, `hreflang` alternates, Organization JSON-LD,
+  `sitemap.xml` with alternates, `robots.txt`, per-language Open Graph images,
+  manifest, icons.
+- Rebrand to Arvand Partners: navy / teal / sand / copper tokens, light theme by
+  default with an optional dark theme, SVG logo, monogram avatars for the
+  fictional team, fictional-company notice in the footer.
+- Removed dependencies no longer used: `framer-motion`, `embla-carousel-react`,
+  Radix accordion and tabs, `@emotion/is-prop-valid`. Added `@next/mdx`.
+- Checked: `pnpm check`, `pnpm build`; 60 screenshots (2 languages x 10 pages x
+  3 widths) with no console errors and no horizontal overflow; theme toggle,
+  mobile menu and the project filter tried by hand in a browser.
+
+Still to do: Vitest and Playwright + axe tests, CI test job, final polish.
