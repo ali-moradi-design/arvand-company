@@ -20,7 +20,7 @@ pnpm build          # static site in out/
 pnpm preview        # serve out/ on http://localhost:3100
 ```
 
-Node 22 (see `.nvmrc`) and pnpm 10.
+Node 24 (see `.nvmrc`) and pnpm 12.
 
 ## Structure
 
