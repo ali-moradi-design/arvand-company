@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "arvand-contact",
+  "title": { "en": "Arvand contact", "fa": "تماس با اروند" },
+  "description": {
+    "en": "Messages from the contact page of arvand-company.ali-moradi-develop.com.",
+    "fa": "پیام‌های صفحهٔ تماس سایت اروند."
+  },
+  "locales": { "default": "en", "supported": ["en", "fa"] },
+  "steps": [
+    {
+      "key": "main",
+      "fields": [
+        {
+          "type": "shortText",
+          "key": "name",
+          "label": { "en": "Full name", "fa": "نام و نام خانوادگی" },
+          "required": true,
+          "settings": { "maxLength": 200 }
+        },
+        {
+          "type": "email",
+          "key": "email",
+          "label": { "en": "Email", "fa": "ایمیل" },
+          "required": true
+        },
+        {
+          "type": "shortText",
+          "key": "company",
+          "label": { "en": "Company", "fa": "شرکت" },
+          "settings": { "maxLength": 200 }
+        },
+        {
+          "type": "shortText",
+          "key": "topic",
+          "label": { "en": "Topic", "fa": "موضوع" },
+          "required": true,
+          "settings": { "maxLength": 200 }
+        },
+        {
+          "type": "longText",
+          "key": "message",
+          "label": { "en": "Message", "fa": "پیام" },
+          "required": true,
+          "settings": { "maxLength": 5000 }
+        }
+      ]
+    }
+  ]
+}

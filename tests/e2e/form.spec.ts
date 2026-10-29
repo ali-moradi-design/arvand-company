@@ -13,9 +13,9 @@ const CORS = {
 
 async function mock(
   page: Page,
-  handler: (route: Route, body: Record<string, string>) => unknown,
+  handler: (route: Route, body: Record<string, unknown>) => unknown,
 ) {
-  const requests: Record<string, string>[] = [];
+  const requests: Record<string, unknown>[] = [];
   await page.route(ENDPOINT, async (route) => {
     if (route.request().method() === "OPTIONS") {
       return route.fulfill({ status: 204, headers: CORS });
@@ -73,10 +73,12 @@ test("sends JSON to the endpoint, shows success and resets the form", async ({
   await expect(page.getByLabel("Full name")).toHaveValue("");
   expect(requests).toHaveLength(1);
   expect(requests[0]).toMatchObject({
-    name: "Ada Lovelace",
-    email: "ada@example.com",
-    topic: "Engineering review",
-    message: "We need a design review.",
+    values: {
+      name: "Ada Lovelace",
+      email: "ada@example.com",
+      topic: "Engineering review",
+      message: "We need a design review.",
+    },
     locale: "en",
   });
 });

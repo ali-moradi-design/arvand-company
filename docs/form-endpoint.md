@@ -3,9 +3,15 @@
 The contact form on `/en/contact/` and `/fa/contact/` posts to the address in
 `NEXT_PUBLIC_FORM_ENDPOINT`. The value is inlined at build time, so changing it
 needs a new build. With no value, the form opens the visitor's email app
-(`mailto:`) instead. The site has no server and does not depend on the
-`form-builder` npm package (which is not published yet): it only needs an HTTPS
-endpoint that follows this contract.
+(`mailto:`) instead. The site does not depend on the formcanvas npm packages:
+it only needs an HTTPS endpoint that follows this contract, which is
+formcanvas' public response API.
+
+Live endpoint: the published formcanvas form `arvand-contact`, owned by its own
+account (not the demo account, whose forms are deleted every night):
+`https://formcanvas.ali-moradi-develop.com/api/forms/arvand-contact/responses`.
+Its document is `docs/formcanvas-contact-form.json` (import it in the builder's
+JSON editor, then publish).
 
 ## Request
 
@@ -13,17 +19,20 @@ endpoint that follows this contract.
 
 ```json
 {
-  "name": "Ada Lovelace",
-  "email": "ada@example.com",
-  "company": "Analytical Ltd",
-  "topic": "Engineering review",
-  "message": "We need a design review.",
+  "values": {
+    "name": "Ada Lovelace",
+    "email": "ada@example.com",
+    "company": "Analytical Ltd",
+    "topic": "Engineering review",
+    "message": "We need a design review."
+  },
   "locale": "en"
 }
 ```
 
 `company` may be an empty string. `locale` is `en` or `fa`. Field names are
-fixed; in `form-builder`, create the form with fields that use these keys.
+fixed; the formcanvas form uses these keys. `topic` is a short text field there,
+because the site sends the translated topic label.
 A hidden honeypot field (`website`) is checked in the browser and never sent.
 
 ## Responses
@@ -37,7 +46,7 @@ A hidden honeypot field (`website`) is checked in the browser and never sent.
 | no answer in 10 s  | Timeout           | "The server took too long", form is kept                     |
 | connection error   | Network error     | "Could not reach the server", form is kept                   |
 
-For `400` and `422` the body may carry per-field messages, in either shape:
+For `400` and `422` the body may carry per-field messages, in any of these shapes:
 
 ```json
 { "errors": { "email": "This address looks invalid", "message": ["Too short"] } }
@@ -46,6 +55,13 @@ For `400` and `422` the body may carry per-field messages, in either shape:
 ```json
 { "errors": [{ "field": "email", "message": "This address looks invalid" }] }
 ```
+
+```json
+{ "error": "invalid", "issues": [{ "key": "email", "code": "pattern" }] }
+```
+
+The last one is formcanvas': it has codes, not text, so those fields get the
+default text.
 
 Only the keys `name`, `email`, `company`, `topic` and `message` are used. A
 field with no message gets a default text; with no `errors` at all the form
