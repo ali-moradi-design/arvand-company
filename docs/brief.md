@@ -11,8 +11,9 @@ this file is the handoff and is safe to make public.
   Türkiye and the Middle East. No real company names, logos or people.
 - Bilingual: English and Persian (Persian RTL). Logical CSS, Vazirmatn for
   Persian, Persian digits in Persian, Latin digits in English, Gregorian dates.
-- Static site (roadmap phase 7 deploy): Next.js static export. Subdomain
-  `company-site.ali-moradi-develop.com`.
+- Runs as a Next.js `output: "standalone"` container on the VPS (decided
+  2026-10-29; it was a static export before). Subdomain
+  `arvand-company.ali-moradi-develop.com`.
 - Do not build from scratch: start from a ready open-source template.
 
 ## Starting point

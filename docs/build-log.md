@@ -189,3 +189,22 @@ variable (`FORM_ENDPOINT`) and rebuilding.
 Still open for the real connection (depends on `form-builder`): its API URL and
 field keys, CORS for the site origin, its rate limit, and the repository
 variable `FORM_ENDPOINT`.
+
+## 2026-10-29 — Deploy: standalone container
+
+- The site now runs as a Next.js server (`output: "standalone"`) in a container on
+  the VPS, like every Next.js site of the roadmap; it was a static export before.
+  Live at `https://arvand-company.ali-moradi-develop.com`.
+- `/` is a real redirect to `/en/` (`redirects()` in `next.config.mjs`), so
+  `app/page.tsx` is gone. Security headers (HSTS, nosniff, Referrer-Policy,
+  Permissions-Policy, X-Frame-Options) come from `headers()`. Nginx compresses, so
+  Next does not (`compress: false`).
+- `scripts/standalone.mjs` copies `public/` and `.next/static` into
+  `.next/standalone`; `scripts/serve.mjs` runs a standalone folder. The e2e suite and
+  the form fixture (`out-form/`, now a standalone folder) run on these servers;
+  `serve` was removed.
+- `Dockerfile`: only `.next/standalone` (build context), non-root, healthcheck on
+  `/en/`. `.github/workflows/docker.yml` builds and pushes the image after CI passes
+  on `main` and deploys it with deploy-kit; it replaces the `Build site` workflow.
+  `deploy/` holds the server's compose file (`127.0.0.1:3110`, read-only, 256 MB) and
+  the host Nginx site (GET/HEAD only). CI actions are pinned to SHAs.

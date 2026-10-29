@@ -53,7 +53,7 @@ shows a general "check the highlighted fields" message.
 
 ## What the endpoint host must allow
 
-- CORS for the site origin (`https://company-site.ali-moradi-develop.com`):
+- CORS for the site origin (`https://arvand-company.ali-moradi-develop.com`):
   `Access-Control-Allow-Origin`, and the preflight `OPTIONS` with
   `Access-Control-Allow-Headers: content-type, accept`.
 - Server-side validation and a rate limit (the browser checks are only a courtesy).
@@ -66,8 +66,9 @@ shows a general "check the highlighted fields" message.
 | `NEXT_PUBLIC_FORM_TIMEOUT_MS` | `10000`                    | Wait time before reporting a timeout |
 | `NEXT_PUBLIC_SITE_URL`        | `http://localhost:3030`    | Public site URL                      |
 
-The `Build site` workflow reads the first and third from repository variables
-(`FORM_ENDPOINT`, `SITE_URL`); they are public values, not secrets.
+The `Docker` workflow builds the production image with `NEXT_PUBLIC_SITE_URL`
+set to the live address and `NEXT_PUBLIC_FORM_ENDPOINT` from the repository
+variable `FORM_ENDPOINT`; both are public values, not secrets.
 
 ## Tests
 
@@ -75,4 +76,4 @@ The `Build site` workflow reads the first and third from repository variables
 - `tests/e2e/form.spec.ts`: the whole flow in a browser against a mocked
   endpoint (success, Persian, 422, 429, 500 then retry, network error, timeout,
   double click, honeypot, axe on the error state). It runs on `out-form/`, a
-  second build with a fake endpoint (`pnpm build:e2e` creates it).
+  second standalone build with a fake endpoint (`pnpm build:e2e` creates it).
