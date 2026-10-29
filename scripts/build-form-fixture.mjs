@@ -1,4 +1,4 @@
-// Builds a second copy of the site into out-form/ with a form endpoint
+// Builds a second standalone copy of the site into out-form/ with a form endpoint
 // configured, so the Playwright suite can test the real submit path against a
 // mocked endpoint. The endpoint is inlined at build time, so it needs its own build.
 import { spawnSync } from "node:child_process";
@@ -18,6 +18,8 @@ run("pnpm", ["exec", "next", "build"], {
   NEXT_PUBLIC_FORM_ENDPOINT: "https://forms.example.test/api/forms/contact/responses",
   NEXT_PUBLIC_FORM_TIMEOUT_MS: "1500",
 });
-renameSync("out", "out-form");
+run("node", ["scripts/standalone.mjs"]);
+// The standalone folder runs from anywhere (`node out-form/server.js`).
+renameSync(".next/standalone", "out-form");
 // Leave no stale build cache behind: the normal build must not reuse these values.
 rmSync(".next", { recursive: true, force: true });

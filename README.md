@@ -14,10 +14,10 @@ pnpm install
 pnpm dev            # http://localhost:3030
 pnpm check          # lint + format check + typecheck + Steiger (FSD)
 pnpm test           # Vitest unit tests
-pnpm build:e2e      # builds out/ and out-form/ (form endpoint fixture) for the e2e suite
-pnpm test:e2e       # Playwright + axe against out/ and out-form/
-pnpm build          # static site in out/
-pnpm preview        # serve out/ on http://localhost:3100
+pnpm build:e2e      # builds .next/standalone and out-form/ (form endpoint fixture) for the e2e suite
+pnpm test:e2e       # Playwright + axe against both standalone servers
+pnpm build          # standalone server in .next/standalone (public/ and .next/static copied in)
+pnpm preview        # run it on http://127.0.0.1:3100
 ```
 
 Node 24 (see `.nvmrc`) and pnpm 12.
