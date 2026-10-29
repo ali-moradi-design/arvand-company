@@ -29,16 +29,20 @@ const firstMessage = (value: unknown): string | undefined => {
   return undefined;
 };
 
-// Accepts `{ errors: { email: "msg" | ["msg"] } }` and
-// `{ errors: [{ field: "email", message: "msg" }] }`. Unknown fields are ignored; a
-// known field without a message gets an empty string (the form shows a default).
+// Accepts `{ errors: { email: "msg" | ["msg"] } }`,
+// `{ errors: [{ field: "email", message: "msg" }] }` and formcanvas'
+// `{ issues: [{ key: "email", code: "pattern" }] }` (codes, no text). Unknown fields
+// are ignored; a known field without a message gets an empty string (the form shows
+// a default).
 export function parseFieldErrors(body: unknown): Partial<Record<FieldName, string>> {
-  const errors = (body as { errors?: unknown } | null)?.errors;
+  const { errors, issues } = (body ?? {}) as { errors?: unknown; issues?: unknown };
   const pairs: [string, string | undefined][] = Array.isArray(errors)
     ? errors.map((item) => [String(item?.field ?? ""), firstMessage(item?.message)])
     : errors && typeof errors === "object"
       ? Object.entries(errors).map(([field, value]) => [field, firstMessage(value)])
-      : [];
+      : Array.isArray(issues)
+        ? issues.map((item) => [String(item?.key ?? ""), undefined])
+        : [];
 
   const result: Partial<Record<FieldName, string>> = {};
   for (const [field, message] of pairs) {
@@ -61,7 +65,8 @@ export async function submitContact({
     const response = await fetchImpl(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({ ...data, locale }),
+      // formcanvas' response API: the answers go under `values`
+      body: JSON.stringify({ values: data, locale }),
       signal: controller.signal,
     });
 

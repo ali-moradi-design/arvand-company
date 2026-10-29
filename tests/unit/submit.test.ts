@@ -33,7 +33,7 @@ describe("submitContact", () => {
     const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe("https://forms.example.test/r");
     expect(init.method).toBe("POST");
-    expect(JSON.parse(init.body as string)).toEqual({ ...data, locale: "fa" });
+    expect(JSON.parse(init.body as string)).toEqual({ values: data, locale: "fa" });
   });
 
   it("maps 422 field errors", async () => {
@@ -115,5 +115,18 @@ describe("parseFieldErrors", () => {
     expect(parseFieldErrors(null)).toEqual({});
     expect(parseFieldErrors("oops")).toEqual({});
     expect(parseFieldErrors({ errors: "nope" })).toEqual({});
+  });
+
+  it("reads formcanvas issues (codes only, so the form shows its default text)", () => {
+    expect(
+      parseFieldErrors({
+        error: "invalid",
+        issues: [
+          { key: "email", code: "pattern" },
+          { key: "message", code: "required" },
+          { key: "other", code: "required" },
+        ],
+      }),
+    ).toEqual({ email: "", message: "" });
   });
 });
